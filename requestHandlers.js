@@ -22,7 +22,12 @@ function publicFile(pathname,request,response,mimeType) {
     })
 }
 function viewFile(pathname,request,response,mimeType) {
-	fs.readFile("./" + pathname + ".html", function(error, file) {
+	let name = pathname
+	console.log("pathname", pathname)
+	if(pathname === "/"){
+		name = "index"
+	}
+	fs.readFile("./" + name + ".html", function(error, file) {
 	 	response.writeHead(200, { "Content-Type": "text/html" });
 	 	indexPage=file;
 		response.end(indexPage);
