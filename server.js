@@ -11,7 +11,7 @@ function start(route,handle){
 		var mimeType =  mime[urlType]?mime[urlType]:false;//判断是文件请求还是路径请求
 		route(handle,pathname,request,response,mimeType);
 	}
-	foo.createServer(onRequest).listen(18080);
+	foo.createServer(onRequest).listen(8888);
 }
 //连接文件的属性
 function contentType(){
